@@ -1,5 +1,5 @@
 
-import { useMenuBar } from './components/navbar'
+import { useMenuBar } from "./components/navbar"
 import Hero from './components/hero'
 import About from './components/about'
 import Work from './components/works'

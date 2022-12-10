@@ -66,7 +66,7 @@ function useMenuBar() {
                         <li><a className="hover:text-hovergreen transition-colors" href="#">Skill</a></li>
                         <li className="bg-basicgreen -mt-2 p-2 dark:text-basictext text-white hover:bg-hovergreen transition-all hover:text-slate-100 rounded-[0.625rem] ">
                             <a className="flex gap-2 font-bold " href="#">Resume
-                                <img className="scale-75 -mt-1" src="../public/images/Download.svg" alt="" />
+                                <img className="scale-75 -mt-1" src="/public/images/Download.svg" alt="" />
 
 
                             </a>
@@ -83,7 +83,7 @@ function useMenuBar() {
 
                     <li className="bg-basicgreen -mt-2 p-2 dark:text-basictext text-white hover:bg-hovergreen transition-colors hover:text-slate-100 rounded-[0.625rem] ">
                         <a className="flex gap-2 font-bold justify-center " href="#">Resume
-                            <img className="scale-75 -mt-1" src="../public/images/Download.svg" alt="" />
+                            <img className="scale-75 -mt-1" src="public\images\Download.svg" alt="" />
                         </a>
                     </li>
                 </ul>
