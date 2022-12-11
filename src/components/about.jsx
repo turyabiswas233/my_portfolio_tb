@@ -1,3 +1,4 @@
+import aboutImg from "/images/about profile pic.png"
 function About() {
     return (
         <div className="w-5/6 mx-auto my-16">
@@ -11,7 +12,7 @@ function About() {
 
             <div className="flex gap-6 items-center w-4/5 mx-auto mt-10">
                 {/*  */}
-                <img className="w-56 h-72" src="public\images\about profile pic.png" alt="" />
+                <img className="w-56 h-72" src={aboutImg} alt="" />
                 {/* right */}
                 <section>
                     <p className="text-2xl">Hey.. <br />

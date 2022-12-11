@@ -9,7 +9,7 @@ function useMenuBar() {
     return {
         isHam, Nav: (
             <div className={`nav_header w-full md:h-auto flex justify-between px-16 py-8 md:items-center sticky z-50 top-0 after:backdrop-blur-lg mx-auto mb-10 h-min  ${isHam ? 'after:h-[100vh]' : 'after:h-full'} after:transition-all after:duration-600 after:absolute after:w-full after:bg-red-500 after:top-0 after:left-0 after:bg-[#acf6] after:-z-20`}>
-                <img className="w-16 p-0 scale-150 bg-none h-fit" src="public\iRonic.svg" alt="" />
+                <img className="w-16 p-0 scale-150 bg-none h-fit" src=" \iRonic.svg" alt="" />
 
                 {/* navbar */}
                 <div className="navbar flex relative">
@@ -66,7 +66,7 @@ function useMenuBar() {
                         <li><a className="hover:text-hovergreen transition-colors" href="#">Skill</a></li>
                         <li className="bg-basicgreen -mt-2 p-2 dark:text-basictext text-white hover:bg-hovergreen transition-all hover:text-slate-100 rounded-[0.625rem] ">
                             <a className="flex gap-2 font-bold " href="#">Resume
-                                <img className="scale-75 -mt-1" src="/public/images/Download.svg" alt="" />
+                                <img className="scale-75 -mt-1" src="/images/Download.svg" alt="" />
 
 
                             </a>
@@ -83,7 +83,7 @@ function useMenuBar() {
 
                     <li className="bg-basicgreen -mt-2 p-2 dark:text-basictext text-white hover:bg-hovergreen transition-colors hover:text-slate-100 rounded-[0.625rem] ">
                         <a className="flex gap-2 font-bold justify-center " href="#">Resume
-                            <img className="scale-75 -mt-1" src="public\images\Download.svg" alt="" />
+                            <img className="scale-75 -mt-1" src=" /images\Download.svg" alt="" />
                         </a>
                     </li>
                 </ul>

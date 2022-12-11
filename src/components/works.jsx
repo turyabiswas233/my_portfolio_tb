@@ -47,7 +47,7 @@ function Work() {
                     </svg>
 
                     <div className="w-1/3 h-auto scale-75 rounded-3xl flex flex-col bg-[rgba(200,200,200,0.2)] overflow-hidden">
-                        <img className="w-full" src="public\images\work Portfolio\work 1.png" alt="" />
+                        <img className="w-full" src="/images/work Portfolio\work 1.png" alt="" />
                         <div className="w-3/4 mx-auto grid grid-cols-2 items-center py-5 ">
                             <p className="text-xl">iRonic</p>
                             <p className="text-xs">a set of related web pages located under a s
@@ -56,7 +56,7 @@ function Work() {
                         </div>
                     </div>
                     <div className="w-1/3 rounded-3xl flex flex-col bg-[rgba(200,200,200,0.2)] overflow-hidden">
-                        <img src="public\images\work Portfolio\work 1.png" alt="" />
+                        <img src="/images/work Portfolio\work 1.png" alt="" />
                         <div className="w-3/4 mx-auto grid grid-cols-2 items-center py-5 ">
                             <p className="text-xl">iRonic</p>
                             <p className="text-xs">a set of related web pages located under a s
@@ -65,7 +65,7 @@ function Work() {
                         </div>
                     </div>
                     <div className="w-1/3 scale-75 rounded-3xl flex flex-col bg-[rgba(200,200,200,0.2)] overflow-hidden">
-                        <img src="public\images\work Portfolio\work 1.png" alt="" />
+                        <img src="/images/work Portfolio\work 1.png" alt="" />
                         <div className="w-3/4 mx-auto grid grid-cols-2 items-center py-5 ">
                             <p className="text-xl">iRonic</p>
                             <p className="text-xs">a set of related web pages located under a s

@@ -39,29 +39,29 @@ function Hero() {
             </section>
             {/* <Transit /> */}
             <section className="sec-right relative grid" >
-                <img src="public\images\herro profile pic.png" alt="" />
+                <img src="\images\herro profile pic.png" alt="" />
 
                 {/* icons */}
                 <div className="absolute h-[80%] w-full">
 
                     {/* js */}
-                    <img className="absolute top-5 -left-8" src="public\hero icons\js.png" alt="" />
+                    <img className="absolute top-5 -left-8" src="\hero icons\js.png" alt="" />
                     {/* html */}
 
-                    <img className="absolute -bottom-5 md:-bottom-10 -right-24 md:-right-32 contrast-150 scale-50" src="public\3d image\html_logo2.gif" alt="" />
+                    <img className="absolute -bottom-5 md:-bottom-10 -right-24 md:-right-32 contrast-150 scale-50" src="\3d image\html_logo2.gif" alt="" />
 
                     {/* css */}
-                    <img className="absolute top-20 -right-10 scale-[.80]" src="public\hero icons\css.png" alt="" />
+                    <img className="absolute top-20 -right-10 scale-[.80]" src="\hero icons\css.png" alt="" />
                     {/* vscode */}
-                    <img className="absolute bottom-3 -left-4" src="public\hero icons\vscode.png" alt="" />
+                    <img className="absolute bottom-3 -left-4" src="\hero icons\vscode.png" alt="" />
                 </div>
 
                 <div className="flex gap-3 mx-auto my-10">
-                    <img src="public\social icons\Facebook c.svg" alt="" />
-                    <img src="public\social icons\Instagram c.svg" alt="" />
-                    <img src="public\social icons\WhatsApp c.svg" alt="" />
-                    <img src="public\social icons\Twitter c.svg" alt="" />
-                    <img src="public\social icons\LinkedIn c.svg" alt="" />
+                    <img src="/social icons/Facebook c.svg" alt="" />
+                    <img src="/social icons/Instagram c.svg" alt="" />
+                    <img src="/social icons/WhatsApp c.svg" alt="" />
+                    <img src="/social icons/Twitter c.svg" alt="" />
+                    <img src="/social icons/LinkedIn c.svg" alt="" />
                 </div>
             </section>
 
