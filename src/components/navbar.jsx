@@ -1,15 +1,45 @@
-import { useState } from "react";
-import { HREF } from "../App";
+import axios from "axios";
+import { useEffect, useState } from "react";
 
-function Navbar({ dispatch }) {
+function Navbar() {
   const [isHam, setIsHam] = useState(false);
   function handleHamburger() {
     setIsHam(!isHam);
   }
+  const [load, setLoad] = useState(true);
+  const [downlink, setDownLink] = useState("null");
+  const resumeLink =
+    "https://dl.drive.google.com/file/d/1Yel41BpF58UN6ICybVE9dJkNVeWMaLec";
+
+  const onButtonClick = async () => {
+    // using Java Script method to get PDF file
+
+    try {
+      const response = await axios.get(resumeLink);
+      console.log(response);
+      // setDownLink(res);
+
+      // ((response) => {
+      //   response.blob().then((blob) => {
+      //     // Creating new object of PDF file
+      //     const fileURL = window.URL.createObjectURL(blob);
+      //     console.log(fileURL);
+      //     // Setting various property values
+      //     let alink = document.createElement("a");
+      //     alink.href = fileURL;
+      //     alink.download = "turya_biswas_resume.pdf";
+
+      //     alink.click();
+      //   });
+      // });
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   return (
     <div
-      className={`nav_header w-full md:h-auto flex justify-between px-16 py-8 md:items-center sticky z-50 top-0 after:backdrop-blur-lg mx-auto mb-10 h-min  ${
+      className={`nav_header w-full flex justify-between px-16 py-5 md:items-center sticky z-50 top-0 after:backdrop-blur-lg mx-auto mb-10 h-min  ${
         isHam ? "after:h-screen md:after:h-full" : "after:h-full"
       } after:transition-all after:duration-600 after:absolute after:w-full after:bg-red-500 after:top-0 after:left-0 after:bg-[#acf6] after:-z-20`}
     >
@@ -53,7 +83,7 @@ function Navbar({ dispatch }) {
         {/* menubar hamburger */}
         <button
           className="md:hidden w-10 h-10 
-                 absolute right-0 -top-5 scale-50 "
+                 absolute right-0 -bottom-1 scale-[.40] "
           onClick={handleHamburger}
         >
           {isHam ? (
@@ -190,20 +220,17 @@ function Navbar({ dispatch }) {
         </button>
         {/* navbar list desktop*/}
         <ul className="nav-list md:flex gap-12 hidden ">
-          <li
-            className="hover:text-hovergreen transition-colors cursor-pointer"
-            onClick={() => setIsHam(false)}
-          >
-            Home
+          <li className="hover:text-hovergreen transition-colors cursor-pointer">
+            <a href="#home">Home</a>
           </li>
           <li className="hover:text-hovergreen transition-colors cursor-pointer">
-            About
+            <a href="#about">About</a>
           </li>
           <li className="hover:text-hovergreen transition-colors cursor-pointer">
-            Work
+            <a href="#work">Work</a>
           </li>
           <li className="hover:text-hovergreen transition-colors cursor-pointer">
-            Skill
+            <a href="#skill">Skill</a>
           </li>
           <li className="bg-basicgreen -mt-2 p-2 dark:text-basictext text-white hover:bg-hovergreen transition-all hover:text-slate-100 rounded-[0.625rem] flex gap-2 font-bold cursor-pointer">
             Resume
@@ -220,20 +247,35 @@ function Navbar({ dispatch }) {
                 : "top-[-70vh] -z-20 hidden "
             } transition-all duration-600`}
       >
-        <li className="hover:bg-hovergreen w-1/3 mx-auto text-center transition-colors p-3 rounded-[0.625rem] cursor-pointer">
-          Home
+        <li
+          className="hover:bg-hovergreen w-1/3 mx-auto text-center transition-colors p-3 rounded-[0.625rem] cursor-pointer"
+          onClick={handleHamburger}
+        >
+          <a href="#home">Home</a>
         </li>
-        <li className="hover:bg-hovergreen w-1/3 mx-auto text-center transition-colors p-3 rounded-[0.625rem] cursor-pointer">
-          About
+        <li
+          className="hover:bg-hovergreen w-1/3 mx-auto text-center transition-colors p-3 rounded-[0.625rem] cursor-pointer"
+          onClick={handleHamburger}
+        >
+          <a href="#about">About</a>
         </li>
-        <li className="hover:bg-hovergreen w-1/3 mx-auto text-center transition-colors p-3 rounded-[0.625rem] cursor-pointer">
-          Work
+        <li
+          className="hover:bg-hovergreen w-1/3 mx-auto text-center transition-colors p-3 rounded-[0.625rem] cursor-pointer"
+          onClick={handleHamburger}
+        >
+          <a href="#work">Work</a>
         </li>
-        <li className="hover:bg-hovergreen w-1/3 mx-auto text-center transition-colors p-3 rounded-[0.625rem] cursor-pointer">
-          Skill
+        <li
+          className="hover:bg-hovergreen w-1/3 mx-auto text-center transition-colors p-3 rounded-[0.625rem] cursor-pointer"
+          onClick={handleHamburger}
+        >
+          <a href="#skill">Skill</a>
         </li>
 
-        <li className="bg-basicgreen -mt-2 p-2 dark:text-basictext text-white hover:bg-hovergreen transition-colors hover:text-slate-100 rounded-[0.625rem] cursor-pointer flex justify-center font-bold ">
+        <li
+          className="bg-basicgreen -mt-2 p-2 dark:text-basictext text-white hover:bg-hovergreen transition-colors hover:text-slate-100 rounded-[0.625rem] cursor-pointer flex justify-center font-bold "
+          onClick={onButtonClick}
+        >
           Resume
           <img className="scale-75 -mt-1" src=" /images\Download.svg" alt="" />
         </li>

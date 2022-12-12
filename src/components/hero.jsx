@@ -1,6 +1,6 @@
-import { useRef, useState } from "react";
+import { useState } from "react";
 
-function Hero({ id }) {
+function Hero() {
   const [showCont, setShowCont] = useState(false);
   const [data, setdata] = useState({
     name: "",
@@ -27,70 +27,67 @@ function Hero({ id }) {
       }
     });
   }
-  const home = useRef(null);
-  console.log(id);
-  if ((typeof home !== "undefined" || typeof home !== null) && id == "home")
-    home?.current?.scrollIntoView({
-      behavior: "smooth",
-      block: "end",
-      inline: "nearest",
-    });
 
   return (
     <>
-      <h1 ref={home} className=""></h1>
-      <div className="w-4/5 grid grid-cols-1 md:grid-cols-2 justify-between mx-auto relative   ">
+      <h1 id={"home"} className="absolute top-0"></h1>
+
+      <div className="w-4/5 justify-between mx-auto relative min-h-fit h-full grid grid-cols-1 md:grid-cols-2 gap-5 px-10 pb-24">
         {/* left top */}
         <section className=" flex flex-col md:gap-9 gap-6 my-5  ">
           <p>
-            <span className="text-3xl font-medium text-basicyellow">
+            <span className="text-xl md:text-3xl font-medium text-basicyellow">
               Hello...
-            </span>{" "}
+            </span>
             <br />
             <br />
-            <span className="text-6xl font-bold tracking-widest">
+            <span className="text-4xl md:text-6xl font-bold tracking-widest">
               I am SUJOY
-            </span>{" "}
+            </span>
             <br />
-            <span className="text-4xl font-normal text-basicgreen">
+            <span className="md:text-4xl text-2xl font-normal text-basicgreen">
               Web Designer
             </span>
           </p>
-          <p className="text-md font-thin tracking-wider">
+          <p className="md:text-md text-sm font-thin tracking-wider">
             Be the best version of yourself
           </p>
         </section>
 
         {/* right bottom */}
-        <section className=" w-1/2 relative flex flex-col   float-right ml-64 ">
-          <img className="w-full" src="\images\herro profile pic.png" alt="" />
+        <section className=" relative flex flex-col mx-auto">
+          <img
+            className="w-[240px]"
+            src="\images\herro profile pic.png"
+            alt=""
+          />
 
           {/* icons */}
           <div className="absolute h-full w-full">
             {/* js */}
             <img
-              className="absolute top-5 -left-8"
-              src="\hero icons\js.png"
+              className="absolute -top-16 -left-28 scale-[.250]"
+              src={"/3d image/1.js_anim_flip.gif"}
               alt=""
             />
             {/* html */}
 
             <img
               className="absolute -bottom-5 md:-bottom-10 -right-24 md:-right-32 contrast-150 scale-50"
-              src="\3d image\html_logo2.gif"
+              src={"/3d image/html_logo2.gif"}
               alt=""
             />
 
             {/* css */}
             <img
-              className="absolute top-20 -right-10 scale-[.80]"
-              src="\hero icons\css.png"
+              className="absolute -top-10 -right-32 scale-[.40]"
+              src={"/3d image/1.css-anim.gif"}
               alt=""
             />
-            {/* vscode */}
+            {/* ps */}
             <img
-              className="absolute bottom-3 -left-4"
-              src="\hero icons\vscode.png"
+              className="absolute bottom-3 -left-32 scale-[.34]"
+              src={"/3d image/1.ps_anim.gif"}
               alt=""
             />
             <div className="flex mx-auto absolute w-4/5 left-[10%] -bottom-10 justify-evenly">
@@ -104,15 +101,16 @@ function Hero({ id }) {
         </section>
 
         {/* contact button */}
-        <button
-          className="font-bold dark:text-basictext text-white bg-btnhover shadow-md dark:hover:shadow-white h-fit w-fit rounded-[10px] px-3 py-2  md:mx-20 transition-shadow my-16 md:my-0"
-          onClick={() => {
-            setShowCont(true);
-          }}
-        >
-          Contact me
-        </button>
-
+        <section>
+          <button
+            className="font-bold dark:text-basictext text-white bg-btnhover shadow-md dark:hover:shadow-white h-fit w-fit rounded-[10px] px-3 py-2  md:mx-20 transition-shadow my-16 md:my-0"
+            onClick={() => {
+              setShowCont(true);
+            }}
+          >
+            Contact me
+          </button>
+        </section>
         {/* contact form */}
         {showCont && (
           <div

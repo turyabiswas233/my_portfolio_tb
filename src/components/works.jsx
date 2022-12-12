@@ -1,4 +1,4 @@
-import { useEffect, useReducer, useRef } from "react";
+import { useReducer } from "react";
 import img1 from "/images/work Portfolio/work 1.png";
 import img2 from "/images/work Portfolio/work 1.png";
 import img3 from "/images/work Portfolio/work 1.png";
@@ -58,7 +58,7 @@ const images = [
   },
 ];
 
-function Work({ id }) {
+function Work() {
   const initPos = 0;
   const [state, dispatch] = useReducer(reducer, initPos);
 
@@ -138,18 +138,10 @@ function Work({ id }) {
         return curState;
     }
   }
-  const work = useRef(null);
-  if (typeof work !== "undefined" || typeof home !== null)
-    work?.current?.scrollIntoView({
-      behavior: "smooth",
-      block: "end",
-      inline: "nearest",
-    });
-  console.log(id);
 
   return (
     <>
-      <h1 ref={work} className=""></h1>
+      <h1 id={"work"}></h1>
 
       <div className="w-5/6 mx-auto my-16">
         <h3
