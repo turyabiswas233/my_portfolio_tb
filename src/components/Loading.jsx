@@ -1,26 +1,26 @@
 import "../../styles/Loading.css"
 
 const Loading = () => {
-    return <div class='loader'>
-        <div class='loader_overlay'></div>
-        <div class='loader_cogs'>
-            <div class='loader_cogs__top '>
-                <div class='top_part'></div>
-                <div class='top_part'></div>
-                <div class='top_part'></div>
-                <div class='top_hole'></div>
+    return <div className='loader'>
+        <div className='loader_overlay'></div>
+        <div className='loader_cogs'>
+            <div className='loader_cogs__top '>
+                <div className='top_part'></div>
+                <div className='top_part'></div>
+                <div className='top_part'></div>
+                <div className='top_hole'></div>
             </div>
-            <div class='loader_cogs__left'>
-                <div class='left_part'></div>
-                <div class='left_part'></div>
-                <div class='left_part'></div>
-                <div class='left_hole'></div>
+            <div className='loader_cogs__left'>
+                <div className='left_part'></div>
+                <div className='left_part'></div>
+                <div className='left_part'></div>
+                <div className='left_hole'></div>
             </div>
-            <div class='loader_cogs__bottom'>
-                <div class='bottom_part'></div>
-                <div class='bottom_part'></div>
-                <div class='bottom_part'></div>
-                <div class='bottom_hole'></div>
+            <div className='loader_cogs__bottom'>
+                <div className='bottom_part'></div>
+                <div className='bottom_part'></div>
+                <div className='bottom_part'></div>
+                <div className='bottom_hole'></div>
             </div>
 
         </div>

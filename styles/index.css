@@ -13,7 +13,7 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
-  --red: #f21f65;
+  --red: #f53d1d;
   --green: #2fceff;
   --blue: #43f;
 }
@@ -25,7 +25,6 @@ a,
 li,
 button,
 span {
-  cursor: none;
   scroll-behavior: smooth;
 }
 
@@ -107,6 +106,9 @@ textarea.contact-inp {
 textarea.contact-inp::-webkit-scrollbar {
   width: 0;
 }
+.top_work div:nth-child(1),.top_work div:nth-child(3){
+  transform: scale(.7);
+}
 
 .anim-pop {
   animation: animpop .2s ease-in;
@@ -121,12 +123,20 @@ textarea.contact-inp::-webkit-scrollbar {
     opacity: 1;
   }
 }
+svg {
+  transition: all 120ms ease-out;
+}
+ 
+svg.close rect {
+  fill: var(--red);
+  stroke: none;
+}
 
 @media (prefers-color-scheme: light) {
 
-  path,
-  rect {
-    stroke: #263a5066;
+  
+  rect,path {
+    stroke: #263a508a;
   }
 
   rect {
@@ -136,13 +146,37 @@ textarea.contact-inp::-webkit-scrollbar {
 
 @media (prefers-color-scheme: dark) {
 
-  path,
+  svg.rootLogo, path,
   rect {
     stroke: #ECECEC;
   }
 
-  rect {
+  svg.rootLogo,rect {
     fill: #ECECEC
   }
+}
 
+input.email::after{
+  content: "*";
+  position: absolute;
+  top: 50%;
+  left: 25%;
+  color: var(--red);
+}
+
+/* footer */
+footer{
+  width: 100%;
+  height: auto;
+  background: #0005;
+  position: relative;
+  background-image: url("/images/footer_earth.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.footerLinkList section ul li a {
+  font-size: 10pt;
+}
+.footerLinkList section ul li a:hover{
+  text-decoration: underline;
 }
