@@ -1,8 +1,8 @@
 function Footer() {
   return (
-    <footer className=" text-gray-600 p-6 mt-16">
-      <div className=" ">
-        <div className=" ">
+    <footer className=" text-gray-600 p-6 h-auto mt-16">
+      <div>
+        <div>
           {/* icon */}
           <svg
             className="rootLogo"
@@ -83,11 +83,7 @@ function Footer() {
         </div>
         <br />
       </div>
-      <p
-        className="absolute bg-basictext bg-opacity-20 w-full text-sm md:text-md text-center py-4 mx-auto left-0 bottom-0 text-black dark:text-opacity-50
-      dark:text-basictext
-      "
-      >
+      <p className="absolute bg-basictext bg-opacity-20 w-full text-sm md:text-md text-center py-4 mx-auto left-0 bottom-0 text-black dark:text-opacity-50 dark:text-basictext">
         Copyright © 2022-present iRonic.inc All rights reserved.
       </p>
     </footer>

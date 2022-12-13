@@ -112,10 +112,23 @@ function Work() {
       </div>
     );
   };
+  function dataAosDelay(id) {
+    let value = id * 120 + 410;
+    return value;
+  }
+  function dataAosDuration(id) {
+    let value = id * 120 + 110;
+    return value;
+  }
 
-  const Card = ({ number, text }) => {
+  const Card = ({ id, number, text }) => {
     return (
-      <div className="ring-1 ring-basictext bg-opacity-50 bg-[rgba(200,200,200,0.1)] rounded-md grid grid-cols-3 gap-2 p-2 items-center">
+      <div
+        className="ring-1 ring-basictext bg-opacity-50 bg-[rgba(200,200,200,0.1)] rounded-md grid grid-cols-3 gap-2 p-2 items-center"
+        data-aos="zoom-in"
+        data-aos-delay={dataAosDelay(id)}
+        data-aos-duration={dataAosDuration(id)}
+      >
         <p className="font-semibold bg-basicblue rounded-md h-full items-center flex place-content-center text-cyan-100 ">
           {number}
         </p>
@@ -143,7 +156,7 @@ function Work() {
     <>
       <h1 id={"work"}></h1>
 
-      <div className="w-5/6 mx-auto my-16">
+      <div className="w-5/6 mx-auto my-16 pb-10">
         <h3
           className="relative text-4xl w-fit h-full py-4 font-bold after:absolute after:w-1/2 after:h-1.5 after:content-[''] after:bg-basicblue after:rounded-full after:-bottom-[0.8px] after:left-0 
             before:absolute before:w-full before:h-[2.5px] before:content-[''] before:bg-gray-400 before:rounded-full before:bottom-0 before:left-0
@@ -245,7 +258,9 @@ function Work() {
 
         <section className="grid grid-cols-2 md:grid-cols-4 gap-3 w-full h-16 ">
           {data.map((elm) => {
-            return <Card key={elm.id} number={elm.num} text={elm.txt} />;
+            return (
+              <Card key={elm.id} id={elm.id} number={elm.num} text={elm.txt} />
+            );
           })}
         </section>
       </div>

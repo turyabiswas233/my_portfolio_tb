@@ -180,3 +180,8 @@ footer{
 .footerLinkList section ul li a:hover{
   text-decoration: underline;
 }
+
+::-webkit-scrollbar{
+  width: 0;
+}
+

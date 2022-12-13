@@ -1,40 +1,41 @@
-import axios from "axios";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 function Navbar() {
   const [isHam, setIsHam] = useState(false);
   function handleHamburger() {
     setIsHam(!isHam);
   }
-  const [load, setLoad] = useState(true);
-  const [downlink, setDownLink] = useState("null");
-  const resumeLink =
-    "https://dl.drive.google.com/file/d/1Yel41BpF58UN6ICybVE9dJkNVeWMaLec";
+  const [load, setLoad] = useState(false);
+
+  const resumeLink = "/ssc_bijgonit 3.pdf";
 
   const onButtonClick = async () => {
     // using Java Script method to get PDF file
 
     try {
-      const response = await axios.get(resumeLink);
-      console.log(response);
-      // setDownLink(res);
+      setLoad(true);
+      await fetch(resumeLink).then((response) => {
+        console.log(response);
+        response.blob().then((blob) => {
+          // Creating new object of PDF file
+          const fileURL = window.URL.createObjectURL(blob);
+          console.log(blob);
+          // Setting various property values
+          let alink = document.createElement("a");
+          alink.href = fileURL;
+          alink.download = "turya_biswas_resume.pdf";
 
-      // ((response) => {
-      //   response.blob().then((blob) => {
-      //     // Creating new object of PDF file
-      //     const fileURL = window.URL.createObjectURL(blob);
-      //     console.log(fileURL);
-      //     // Setting various property values
-      //     let alink = document.createElement("a");
-      //     alink.href = fileURL;
-      //     alink.download = "turya_biswas_resume.pdf";
-
-      //     alink.click();
-      //   });
-      // });
+          alink.click(setLoad(false));
+        });
+      });
     } catch (error) {
+      setLoad(false);
       console.log(error);
     }
+  };
+
+  const Spinner = () => {
+    return <div>Loading...</div>;
   };
 
   return (
@@ -241,7 +242,7 @@ function Navbar() {
       {/* navbar list moobile*/}
       <ul
         className={`nav-list grid grid-cols-1 gap-12 
-            absolute w-4/5  mx-auto md:hidden ${
+            absolute w-full left-0 md:hidden ${
               isHam
                 ? "top-32 opacity-100 nav_header_mb"
                 : "top-[-70vh] -z-20 hidden "
@@ -273,11 +274,19 @@ function Navbar() {
         </li>
 
         <li
-          className="bg-basicgreen -mt-2 p-2 dark:text-basictext text-white hover:bg-hovergreen transition-colors hover:text-slate-100 rounded-[0.625rem] cursor-pointer flex justify-center font-bold "
+          className="bg-basicgreen w-2/3 mx-auto -mt-2 p-2 dark:text-basictext text-white hover:bg-hovergreen transition-colors hover:text-slate-100 rounded-[0.625rem] cursor-pointer flex justify-center font-bold "
           onClick={onButtonClick}
         >
           Resume
-          <img className="scale-75 -mt-1" src=" /images\Download.svg" alt="" />
+          {load ? (
+            <Spinner />
+          ) : (
+            <img
+              className="scale-75 -mt-1"
+              src=" /images\Download.svg"
+              alt=""
+            />
+          )}
         </li>
       </ul>
     </div>

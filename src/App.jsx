@@ -2,10 +2,15 @@ import Navbar from "./components/navbar";
 import Hero from "./components/hero";
 import About from "./components/about";
 import Work from "./components/works";
-import DownDemo from "./components/DownDemo";
 import Footer from "./components/footer";
+import Skill from "./components/skill";
+import Aos from "aos";
+import { useEffect } from "react";
 
 function App() {
+  useEffect(() => {
+    Aos.init();
+  });
   return (
     <>
       <div className="App font-basicfont text-darkbg dark:bg-darkbg dark:text-basictext w-full ">
@@ -15,8 +20,9 @@ function App() {
           <Hero />
           <About />
           <Work />
+          <Skill />
         </div>
-        <DownDemo />
+
         {/* footer */}
         <Footer />
       </div>
