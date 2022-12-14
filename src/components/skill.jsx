@@ -20,6 +20,7 @@ function Skill() {
       num: 45,
     },
   ];
+
   return (
     <>
       <h1 id={"skill"} className="pb-10"></h1>
@@ -44,16 +45,15 @@ function Skill() {
           <section className="animate_skill block md:grid grid-cols-2 gap-2 h-min ">
             {/* left */}
             <div
-              className={`${
-                fullHide ? "grid-cols-1" : "grid-cols-2"
-              } gap-3 transition-all grid items-center
-              ring-2 dark:ring-white ring-cyan-500 rounded-md bg-[rgba(100,200,200,0.2)] p-4 pb-16 h-fit relative `}
-              data-aos="fade-right"
-              data-aos-duration="1200"
+              className={` ring-2 dark:ring-white ring-cyan-100 rounded-md bg-[rgba(100,200,200,0.2)] p-4 pb-16 relative contain 
+              ${fullHide ? "containactive" : ""}
+              `}
+              // data-aos="fade-right"
+              // data-aos-duration="1200"
             >
               <div
-                className="rounded-lg bg-cyan-600 text-black h-auto min-h-fit p-3 overflow-y-scroll"
-                data-aos="flip-left"
+                className={`grapD ${fullHide ? "active activeGrap" : ""}`}
+                // data-aos="flip-left"
               >
                 <h2 className="text-2xl font-bold">Graphical Skill</h2>
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit.
@@ -62,8 +62,8 @@ function Skill() {
                 suscipit saepe ipsum dolore placeat?
               </div>
               <div
-                className="rounded-lg bg-cyan-600 text-black h-auto min-h-fit p-3 overflow-y-scroll"
-                data-aos="flip-right"
+                className={`codD ${fullHide ? "active activeCod" : ""}`}
+                // data-aos="flip-right"
               >
                 <h2 className="text-2xl font-bold">Coding Skill</h2>
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit.
@@ -89,25 +89,25 @@ function Skill() {
                     <path
                       d="M15.5 9.5368L15.5 21.4635"
                       stroke="white"
-                      stroke-width="2.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
+                      strokeWidth="2.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
                     />
                     <path
                       d="M10.0243 15.0305C10.0243 15.0305 13.7138 9.53711 15.5002 9.53711C17.2865 9.53711 20.9702 15.0305 20.9702 15.0305"
                       stroke="white"
-                      stroke-width="2.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
+                      strokeWidth="2.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
                     />
                     <path
-                      fill-rule="evenodd"
-                      clip-rule="evenodd"
+                      fillRule="evenodd"
+                      clipRule="evenodd"
                       d="M29 15.5C29 5.37573 25.6243 2 15.5 2C5.37573 2 2 5.37573 2 15.5C2 25.6243 5.37573 29 15.5 29C25.6243 29 29 25.6243 29 15.5Z"
                       stroke="white"
-                      stroke-width="2.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
+                      strokeWidth="2.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
                     />
                   </svg>
                 ) : (
@@ -122,25 +122,25 @@ function Skill() {
                     <path
                       d="M15.5 9.5368L15.5 21.4635"
                       stroke="white"
-                      stroke-width="2.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
+                      strokeWidth="2.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
                     />
                     <path
                       d="M10.0243 15.0305C10.0243 15.0305 13.7138 9.53711 15.5002 9.53711C17.2865 9.53711 20.9702 15.0305 20.9702 15.0305"
                       stroke="white"
-                      stroke-width="2.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
+                      strokeWidth="2.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
                     />
                     <path
-                      fill-rule="evenodd"
-                      clip-rule="evenodd"
+                      fillRule="evenodd"
+                      clipRule="evenodd"
                       d="M29 15.5C29 5.37573 25.6243 2 15.5 2C5.37573 2 2 5.37573 2 15.5C2 25.6243 5.37573 29 15.5 29C25.6243 29 29 25.6243 29 15.5Z"
                       stroke="white"
-                      stroke-width="2.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
+                      strokeWidth="2.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
                     />
                   </svg>
                 )}

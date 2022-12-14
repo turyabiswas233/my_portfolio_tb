@@ -1,33 +1,36 @@
 import { useState } from "react";
 
-function Navbar() {
+function Navbar({ scrollUp }) {
   const [isHam, setIsHam] = useState(false);
   function handleHamburger() {
     setIsHam(!isHam);
   }
   const [load, setLoad] = useState(false);
 
-  const resumeLink = "/ssc_bijgonit 3.pdf";
+  const resumeLink =
+    "https://dl.drive.google.com/file/d/1Yel41BpF58UN6ICybVE9dJkNVeWMaLec/view";
 
   const onButtonClick = async () => {
     // using Java Script method to get PDF file
 
     try {
-      setLoad(true);
-      await fetch(resumeLink).then((response) => {
-        console.log(response);
-        response.blob().then((blob) => {
-          // Creating new object of PDF file
-          const fileURL = window.URL.createObjectURL(blob);
-          console.log(blob);
-          // Setting various property values
-          let alink = document.createElement("a");
-          alink.href = fileURL;
-          alink.download = "turya_biswas_resume.pdf";
+      await fetch(resumeLink)
+        .then((response) => {
+          response.blob().then((blob) => {
+            // Creating new object of PDF file
+            const fileURL = window.URL.createObjectURL(blob);
+            console.log(blob);
+            // Setting various property values
+            let alink = document.createElement("a");
+            alink.href = fileURL;
+            alink.download = "turya_biswas_resume.pdf";
 
-          alink.click(setLoad(false));
+            alink.click();
+          });
+        })
+        .finally(() => {
+          setLoad(false);
         });
-      });
     } catch (error) {
       setLoad(false);
       console.log(error);
@@ -35,14 +38,23 @@ function Navbar() {
   };
 
   const Spinner = () => {
-    return <div>Loading...</div>;
+    return (
+      <div
+        className="w-5 h-5 mx-4 my-auto rounded-full border-2
+    border-t-slate-100 border-transparent animate-spin
+    
+    "
+      ></div>
+    );
   };
 
   return (
     <div
-      className={`nav_header w-full flex justify-between px-16 py-5 md:items-center sticky z-50 top-0 after:backdrop-blur-lg mx-auto mb-10 h-min  ${
-        isHam ? "after:h-screen md:after:h-full" : "after:h-full"
-      } after:transition-all after:duration-600 after:absolute after:w-full after:bg-red-500 after:top-0 after:left-0 after:bg-[#acf6] after:-z-20`}
+      className={`nav_header w-[98%] flex justify-between px-16 py-5 md:items-center sticky z-50 top-0 after:backdrop-blur-lg mx-auto mb-10 h-min  ${
+        isHam ? "after:h-[96.5vh] md:after:h-full" : "after:h-full"
+      } after:transition-all after:duration-600 after:absolute after:w-full after:bg-red-500 after:top-0 after:left-0 after:bg-[#acf6] after:-z-20 transition-transform duration-700
+      ${scrollUp > 0 ? "-translate-y-40" : "translate-y-3"}  after:rounded-md
+      `}
     >
       <svg
         className="rootLogo"
