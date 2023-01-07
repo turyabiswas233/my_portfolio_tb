@@ -1,21 +1,18 @@
-import React, { lazy, Suspense } from 'react'
-import Loading from "./components/Loading"
-import ReactDOM from 'react-dom/client'
+import React from "react";
+import ReactDOM from "react-dom/client";
 
-import '../styles/index.css'
-
+import "../styles/index.css";
+import App from "./App";
 const RootApp = () => {
-  const App = lazy(() => import('./App'))
-
-  return <>
-    <Suspense fallback={<Loading />}>
+  return (
+    <>
       <App />
-    </Suspense>
-  </>
-}
+    </>
+  );
+};
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <RootApp />
   </React.StrictMode>
-)
+);

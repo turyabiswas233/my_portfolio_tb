@@ -1,11 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600;700;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600;700;800&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root,
 * {
-  font-family: 'Noto Sans', sans-serif;
+  font-family: "Noto Sans", sans-serif;
   line-height: 24px;
   font-weight: 400;
   font-synthesis: none;
@@ -26,6 +26,7 @@ li,
 button,
 span {
   scroll-behavior: smooth;
+  overflow-x: none;
 }
 
 body {
@@ -33,7 +34,7 @@ body {
   padding: 0%;
   margin: 0%;
   box-sizing: border-box;
-  overflow-x: hidden;
+  overflow-x: none;
 }
 
 span.ball {
@@ -47,7 +48,6 @@ span.ball {
   z-index: 100;
 }
 
-
 span.ball::before {
   position: absolute;
   content: "";
@@ -60,7 +60,6 @@ span.ball::before {
   transform-origin: top;
   transform: rotate(25deg);
   box-shadow: 0 0 10px #43f, 0 0 30px 4px var(--green);
-
 }
 
 span.ball::after {
@@ -75,9 +74,7 @@ span.ball::after {
   transform-origin: top;
   transform: rotate(-25deg);
   box-shadow: 0 0 10px #43f, 0 0 30px 4px var(--green);
-
 }
-
 
 /* contact input */
 .contact-inp {
@@ -88,7 +85,6 @@ span.ball::after {
   margin-top: 10px;
   border: none;
   outline: none;
-
 }
 
 .contact-inp::-webkit-inner-spin-button {
@@ -106,12 +102,13 @@ textarea.contact-inp {
 textarea.contact-inp::-webkit-scrollbar {
   width: 0;
 }
-.top_work div:nth-child(1),.top_work div:nth-child(3){
-  transform: scale(.7);
+.top_work div:nth-child(1),
+.top_work div:nth-child(3) {
+  transform: scale(0.7);
 }
 
 .anim-pop {
-  animation: animpop .2s ease-in;
+  animation: animpop 0.2s ease-in;
 }
 
 @keyframes animpop {
@@ -126,16 +123,15 @@ textarea.contact-inp::-webkit-scrollbar {
 svg {
   transition: all 120ms ease-out;
 }
- 
+
 svg.close rect {
   fill: var(--red);
   stroke: none;
 }
 
 @media (prefers-color-scheme: light) {
-
-  
-  rect,path {
+  rect,
+  path {
     stroke: #263a508a;
   }
 
@@ -145,18 +141,24 @@ svg.close rect {
 }
 
 @media (prefers-color-scheme: dark) {
-
-  svg.rootLogo, path,
+  svg.rootLogo,
+  path,
   rect {
-    stroke: #ECECEC;
+    stroke: #ececec;
+  }
+  .menu-btn__burger,
+  .menu-btn__burger::before,
+  .menu-btn__burger::after {
+    background: #ececec;
   }
 
-  svg.rootLogo,rect {
-    fill: #ECECEC
+  svg.rootLogo,
+  rect {
+    fill: #ececec;
   }
 }
 
-input.email::after{
+input.email::after {
   content: "*";
   position: absolute;
   top: 50%;
@@ -165,71 +167,104 @@ input.email::after{
 }
 
 /* footer */
-footer{
+footer {
   width: 100%;
   height: auto;
   background: #0005;
   position: relative;
-  background-image: url("/images/footer_earth.svg");
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-.footerLinkList section ul li a {
-  font-size: 10pt;
-}
-.footerLinkList section ul li a:hover{
-  text-decoration: underline;
 }
 
-::-webkit-scrollbar{
+::-webkit-scrollbar {
   width: 0;
 }
- 
-.contain{
+
+.contain {
   position: relative;
   width: 100%;
   height: 250px;
   transition: all 1s linear;
 }
-.containactive{
+.containactive {
   height: 100%;
 }
-.grapD, .codD{
+.grapD,
+.codD {
   position: absolute;
   height: 80%;
   width: 40%;
   top: 8%;
   max-height: 150px;
-  background-image:  linear-gradient(
-    to bottom,rgb(10 200 250 / 0.1),#DCDCDC  );
+  background-image: linear-gradient(to bottom, rgb(10 200 250 / 0.1), #dcdcdc);
   overflow-y: hidden;
   padding: 3px 10px;
   border-radius: 10px;
   display: grid;
   grid-template-columns: 2.5fr;
-  transition: all .6s linear;
+  transition: all 0.6s linear;
   visibility: visible;
-  
 }
-.grapD{
+.grapD {
   left: 5%;
 }
-.codD{
+.codD {
   right: 5%;
 }
 
- .active{
+.active {
   max-height: 300px;
-  background-image:  linear-gradient(
-    to bottom,rgb(10 200 250 / 0.1),rgb(10 200 250 / 0.1));
+  background-image: linear-gradient(
+    to bottom,
+    rgb(10 200 250 / 0.1),
+    rgb(10 200 250 / 0.1)
+  );
 }
 
-.activeGrap{
-  
-  background-image:  linear-gradient(
-    to bottom,rgb(27, 23, 80),rgb(19, 14, 71));
+.activeGrap {
+  background-image: linear-gradient(
+    to bottom,
+    rgb(27, 23, 80),
+    rgb(19, 14, 71)
+  );
 }
 
-.activeCod{
-  background-color: #f20;  
+.activeCod {
+  background-color: #f20;
+}
+
+@keyframes bounce_x {
+  0%,
+  100% {
+    transform: translateX(20%);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+  50% {
+    transform: none;
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
+}
+
+.rotate {
+  animation: rot 20s linear infinite;
+}
+.rotate-reverse {
+  animation-direction: reverse;
+}
+@keyframes rot {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.react {
+  animation: react 3s linear infinite;
+}
+@keyframes react {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
