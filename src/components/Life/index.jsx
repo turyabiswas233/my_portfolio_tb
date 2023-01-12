@@ -1,7 +1,7 @@
 import React from "react";
 import ProgressBar from "../ProgressBar";
 
-function Life({ mountMB, mountPC }) {
+function Life() {
   const skills = [
     {
       type: "html5",
@@ -50,11 +50,7 @@ function Life({ mountMB, mountPC }) {
                 key={id}
                 className="basis-1/3 hover:shadow-lg hover:shadow-rose-300 rounded-lg transition-shadow duration-500"
               >
-                <ProgressBar
-                  key={id}
-                  timer={{ mountPC, mountMB }}
-                  data={skill}
-                />
+                <ProgressBar key={id} data={skill} />
               </li>
             );
           })}

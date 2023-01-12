@@ -66,21 +66,24 @@ function Code() {
   const FrontEnd = () => {
     return (
       <>
-        <ul className="list-disc mx-5 my-5 pt-5">
-          <li>html 5</li>
-          <li>css3</li>
-          <li>sass</li>
-          <li>React.js</li>
-          <li>Next.js</li>
-          <li>Vite.js</li>
-        </ul>
-        <ul className="list-disc mx-5 my-5 pt-5">
-          <li>Bootstrap 4</li>
-          <li>Animate.css</li>
-          <li>Babel</li>
-          <li>JSX</li>
-          <li>React</li>
-        </ul>
+        <section className="md:flex md:justify-around">
+          <ul className="list-disc mx-5 my-5 pt-5">
+            <li>html 5</li>
+            <li>css3</li>
+            <li>sass</li>
+            <li>React.js</li>
+            <li>Next.js</li>
+            <li>Vite.js</li>
+          </ul>
+          <ul className="list-disc mx-5 my-5 pt-5">
+            <li>Bootstrap 4</li>
+            <li>Animate.css</li>
+            <li>Babel</li>
+            <li>JSX</li>
+            <li>React</li>
+          </ul>
+        </section>
+
         <div className="w-11/12 gap-3 grid grid-cols-1 md:grid-cols-2 mx-auto">
           {frontend_data.map((value, id) => {
             return (
@@ -126,7 +129,7 @@ function Code() {
     return;
   }, [activeTab]);
   return (
-    <div className=" w-4/5 md:w-max  mx-auto py-5">
+    <div className=" w-4/5 md:w-max  mx-auto py-5 ">
       <section className="w-5/6 mx-auto">
         <ul
           className="codeBtnList flex space-x-4 p-4 bg-gradient-to-tr from-purple-600

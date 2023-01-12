@@ -1,8 +1,7 @@
 function Footer() {
   return (
-    <footer className=" text-gray-600 p-3 h-auto mt-16">
-      <div></div>
-      <p className="absolute bg-darkbg w-full text-sm md:text-md text-center py-4 mx-auto left-0 bottom-0 text-black dark:text-opacity-50 dark:text-basictext">
+    <footer className="bg-darkbg/90 text-gray-600 h-auto mt-14">
+      <p className="w-full text-sm md:text-md text-center py-4 mx-auto  text-opacity-50 text-basictext">
         Copyright &copy; 2023{" "}
         <span className="text-[.6rem] text-basictext">Turya Biswas</span> All
         rights reserved.
