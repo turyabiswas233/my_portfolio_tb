@@ -1,16 +1,27 @@
 import React, { lazy, Suspense } from "react";
 import Loading from "../../loading/loading";
+import { motion } from "framer-motion";
 import { FaArrowRight } from "react-icons/fa";
 
 function Cart({ id, title, link, src }) {
   const Img = lazy(() => import("./img"));
 
   return (
-    <div
+    <motion.div
       className={`shadow-sm shadow-black/60 rounded-md p-3 space-y-4 mx-auto w-full
       ring-2 bg-gray-500/30
     ${id % 2 == 0 ? "ring-cyan-500" : "ring-pink-500"} 
 `}
+      variants={{
+        hidden: { opacity: 0, scale: 0 },
+        visible: { opacity: 1, scale: 1 },
+      }}
+      initial="hidden"
+      animate="visible"
+      transition={{
+        delay: 1.5,
+        duration: 0.75 * id + 0.5,
+      }}
     >
       <section className="rounded-md group overflow-hidden w-full h-4/5 relative">
         <Suspense fallback={<Loading />}>
@@ -30,7 +41,7 @@ function Cart({ id, title, link, src }) {
         </a>
       </section>
       <h1 className="font-semibold text-sm md:text-xl">{title}</h1>
-    </div>
+    </motion.div>
   );
 }
 

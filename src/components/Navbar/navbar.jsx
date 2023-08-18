@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Btn from "../Button";
 import List from "../list.jsx";
+import { FaGithubSquare } from "react-icons/fa";
 function Navbar() {
   const [isHam, setIsHam] = useState(false);
   function handleHamburger() {
@@ -15,8 +16,13 @@ function Navbar() {
       `}
     >
       <p className="self-center">
-        <a className="text-basictext" href="https://github.com/turyabiswas233">
-          Github
+        <a
+          className="text-basictext flex gap-1 items-center hover:text-sky-300 px-3 py-2
+          rounded-full shadow-slate-200 shadow-none hover:shadow-sky-300 transition-all duration-300 hover:shadow-md hover:translate-y-1
+          "
+          href="https://github.com/turyabiswas233"
+        >
+          <FaGithubSquare /> Github
         </a>
       </p>
 

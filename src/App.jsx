@@ -2,6 +2,7 @@ import { useEffect, useReducer, useState, lazy, Suspense } from "react";
 //react-icons
 import { BsCodeSlash, BsFillJournalBookmarkFill } from "react-icons/bs";
 import { BiWinkSmile } from "react-icons/bi";
+import { motion } from "framer-motion";
 
 //components
 import Navbar from "./components/Navbar/navbar";
@@ -97,11 +98,12 @@ function App() {
       </div>
     );
   };
+
   return (
     <>
       <div
         className="App font-basicfont w-full 
-      overflow-x-hidden"
+      overflow-x-hidden selection:bg-slate-900 selection:text-white"
       >
         <Navbar ScrollUp={willScrollUp} />
         {/* main body */}
@@ -113,10 +115,21 @@ function App() {
             <Hero />
 
             <SectionBtn />
-            <div>
+            <motion.div
+              variants={{
+                hidden: { opacity: 0, y: 80 },
+                visible: { opacity: 1, y: 0 },
+              }}
+              initial="hidden"
+              animate="visible"
+              transition={{
+                delay: 1,
+                duration: 0.5,
+              }}
+            >
               {activeTab == TABS.LIFE && <Life />}
               {activeTab == TABS.CODE && <Code />}
-            </div>
+            </motion.div>
             <Contact />
           </Suspense>
         </div>
